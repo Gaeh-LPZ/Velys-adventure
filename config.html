@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/config.css">
+    <title>Vely's Adventures | Configuración</title>
+</head>
+<body>
+    <main>
+        <aside class="config-nav">
+            <header>
+                <h1>Vely's Adventures</h1>
+                <p>CONFIGURACIÓN DEL JUEGO</p>
+            </header>
+            <nav>
+                <a href="#audio" class="active">
+                    <svg width="24" height="24">
+                        <use xlink:href="./assets/icons/volume_active.svg"></use>
+                    </svg>
+                    Audio
+                </a>
+                <a href="#">Controles</a>
+            </nav>
+        </aside>
+        <section id="audio">
+            <header>
+                <h2>Audio</h1>
+                <p>Ajusta el volumen y la inmersión sonora</p>
+            </header>
+            <p>VOLUMEN GENERAL</p>
+            <form action="">
+                <label>Volumen Maestro
+                    <input type="range">
+                </label>
+                <label>Musica
+                    <input type="range">
+                </label>
+                <label>Efectos de Sonido
+                    <input type="range">
+                </label>
+            </form>
+            <footer>
+                <p>Restaurar Valores</p>
+                <div>
+                    <button>Cancelar</button>
+                    <button>Guardar Cambios</button>
+                </div>
+            </footer>
+        </section>
+    </main>  
+</body>
+</html>
