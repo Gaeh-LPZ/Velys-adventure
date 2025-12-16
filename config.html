@@ -1,53 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración del Juego</title>
     <link rel="stylesheet" href="./css/config.css">
-    <title>Vely's Adventures | Configuración</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <main>
-        <aside class="config-nav">
-            <header>
-                <h1>Vely's Adventures</h1>
-                <p>CONFIGURACIÓN DEL JUEGO</p>
+
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <div class="brand">
+            <h1>Vely's <span>Adventures</span></h1>
+            <p>CONFIGURACIÓN DEL JUEGO</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-item active" onclick="openTab('audio', this)">
+                <i class="fa-solid fa-volume-high"></i> Audio
+            </div>
+            <div class="nav-item" onclick="openTab('controls', this)">
+                <i class="fa-solid fa-gamepad"></i> Controles
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>Versión 1.0.4 - Release</p>
+            <p>ID: Vely Te amo</p>
+        </div>
+    </aside>
+
+    <main class="content-area">
+        
+        <div id="audio" class="tab-content active-tab">
+            <header class="card-header">
+                <h2>Audio</h2>
+                <p>Ajusta el volumen y la inmersión sonora.</p>
             </header>
-            <nav>
-                <a href="#audio" class="active">
-                    <svg width="24" height="24">
-                        <use xlink:href="./assets/icons/volume_active.svg"></use>
-                    </svg>
-                    Audio
-                </a>
-                <a href="#">Controles</a>
-            </nav>
-        </aside>
-        <section id="audio">
-            <header>
-                <h2>Audio</h1>
-                <p>Ajusta el volumen y la inmersión sonora</p>
-            </header>
-            <p>VOLUMEN GENERAL</p>
-            <form action="">
-                <label>Volumen Maestro
-                    <input type="range">
-                </label>
-                <label>Musica
-                    <input type="range">
-                </label>
-                <label>Efectos de Sonido
-                    <input type="range">
-                </label>
-            </form>
-            <footer>
-                <p>Restaurar Valores</p>
-                <div>
-                    <button>Cancelar</button>
-                    <button>Guardar Cambios</button>
+
+            <section class="settings-section">
+                <h3>VOLUMEN GENERAL</h3>
+                
+                <div class="control-group slider-group">
+                    <div class="label-row">
+                        <label><i class="fa-solid fa-chart-simple"></i> Volumen Maestro</label>
+                        <span class="percentage">80%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="80" class="custom-slider">
+                </div>
+
+                 <div class="control-group slider-group">
+                    <div class="label-row">
+                        <label><i class="fa-solid fa-music"></i> Música</label>
+                        <span class="percentage">60%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="60" class="custom-slider">
+                </div>
+
+                 <div class="control-group slider-group">
+                    <div class="label-row">
+                        <label><i class="fa-solid fa-wave-square"></i> Efectos de Sonido</label>
+                        <span class="percentage">95%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="95" class="custom-slider">
+                </div>
+            </section>
+
+            <footer class="card-footer">
+                <a href="#" class="restore-link"><i class="fa-solid fa-arrow-rotate-left"></i> Restaurar valores</a>
+                <div class="button-group">
+                    <button class="btn btn-outline">Cancelar</button>
+                    <button class="btn btn-primary">Guardar Cambios</button>
                 </div>
             </footer>
-        </section>
-    </main>  
+        </div>
+
+        <div id="controls" class="tab-content">
+            <header class="card-header">
+                <h2>Controles</h2>
+                <p>Visualiza el mapa de teclas para moverte e interactuar.</p>
+            </header>
+
+            <section class="settings-section">
+                <h3>MOVIMIENTO Y ACCIÓN</h3>
+                
+                <div class="controls-grid">
+                    <div class="control-card">
+                        <div class="key-cap">W</div>
+                        <span class="action-text">Avanzar hacia adelante</span>
+                    </div>
+                    <div class="control-card">
+                        <div class="key-cap">S</div>
+                        <span class="action-text">Avanzar hacia atrás</span>
+                    </div>
+                    <div class="control-card">
+                        <div class="key-cap">A</div>
+                        <span class="action-text">Avanzar izquierda</span>
+                    </div>
+                    <div class="control-card">
+                        <div class="key-cap">D</div>
+                        <span class="action-text">Avanzar derecha</span>
+                    </div>
+                    <div class="control-card">
+                        <div class="key-cap space">Espacio</div>
+                        <span class="action-text">Saltar</span>
+                    </div>
+                    <div class="control-card">
+                        <div class="key-cap">E</div>
+                        <span class="action-text">Interactuar con objetos</span>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="card-footer">
+                <div></div>
+                <div class="button-group">
+                    <button class="btn btn-primary">Entendido</button>
+                </div>
+            </footer>
+        </div>
+
+    </main>
+</div>
+
+<script src="./js/script.js"></script>
+
 </body>
 </html>
